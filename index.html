@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Banco Patito - Cálculo de interés compuesto</title>
+	<link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<header>
+		<h1>Banco Patito</h1>
+		<nav>
+			<ul>
+				<li><a href="#">Inicio</a></li>
+				<li><a href="#">Servicios</a></li>
+				<li><a href="#">Acerca de</a></li>
+				<li><a href="#">Contacto</a></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<section class="calculadora">
+			<h2>Cálculo de interés compuesto</h2>
+			<form>
+				<div class="input-container">
+					<label for="capital">Capital inicial:</label>
+					<input type="text" id="capital" pattern="[0-9]{1,10}(\.[0-9]+)?" required placeholder="Vas carlos slim">
+				</div>
+				<div class="input-container">
+					<label for="tasa">Tasa de interés:</label>
+					<input type="number" id="tasa" min="0" max="100" step="0.01" required placeholder="Algo logico porfa">
+				</div>
+				<div class="input-container">
+					<label for="tiempo">Tiempo (en meses):</label>
+					<input type="number" id="tiempo" min="1" max="600" required placeholder="Apoco si vives a los 150">
+				</div>
+				<input type="button" value="Calcular" onclick="calcular()">
+				<input type="reset" value="Borrar">
+			</form>
+			<br><br>
+			<div class="table-container">
+				<table id="tabla-resultados">
+					<thead>
+						<tr>
+							<th>Mes</th>
+							<th>Capital inicial</th>
+							<th>Interés generado</th>
+							<th>Capital final</th>
+						</tr>
+					</thead>
+					<tbody></tbody>
+					<tfoot>
+						<tr>
+							<td colspan="2"></td>
+							<td id="total-intereses"></td>
+							<td id="total-monto"></td>
+						</tr>
+					</tfoot>
+				</table>
+				
+			</div>
+		</section>
+	</main>
+	<footer>
+		<p>&copy; 2023 Banco Patito. Todos los derechos reservados.</p>
+	</footer>
+	<script src="./js/script.js"></script>
+</body>
+</html>
